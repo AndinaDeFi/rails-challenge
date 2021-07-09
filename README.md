@@ -16,6 +16,7 @@ We'd like to have a Rails web app that:
 ## What we don't need
 * Sign up (users may be seeded).
 * Cryptocurrency/token CRUD (they may also be seeded).
+* An amazingly beautiful UI. Just keep it simple and useful.
 
 ## Recommended gems
 * rails ~> 6.1.3.2
