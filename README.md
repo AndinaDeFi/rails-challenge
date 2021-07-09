@@ -32,4 +32,4 @@ We'd like to have a Rails web app that:
 * Provide in the README file any instructions to let anyone clone the new repo and run it locally.
 * Use DB seeding for initial creation of users, coins and anything else necessary. Please provide credentials for at least one user.
 * Regarding price update process, create the helpers, tasks or anything needed, and provide instructions on how you would set it up in a production environment.
-* When you are ready to submit your proposal, open a pull request against [this repo](https://github.com/AndinaDeFi/rails-challenge).
+* When you are ready to submit your proposal, open a pull request of your fork against [this repo](https://github.com/AndinaDeFi/rails-challenge).
