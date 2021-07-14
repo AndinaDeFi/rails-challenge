@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_030641) do
+ActiveRecord::Schema.define(version: 2021_07_14_032815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2021_07_14_030641) do
     t.string "symbol"
     t.integer "pair"
     t.float "price"
-    t.integer "market_cap"
+    t.bigint "market_cap"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "total_volume"
+    t.bigint "total_volume"
     t.datetime "prices_updated_at"
   end
 
