@@ -1,9 +1,14 @@
 FactoryBot.define do
   factory :cryptocurrency do
-    name { "MyString" }
-    symbol { "MyString" }
-    pair { 1 }
-    price { 1.5 }
-    market_cap { 1 }
+    sequence :name do |n|
+      "Crypto#{n}"
+    end
+    sequence :symbol do |n|
+      "cry#{n}"
+    end
+    pair { 0 }
+    price { rand(1..50_000) }
+    market_cap { price * 100 }
+    total_volume { price / 2 }
   end
 end
