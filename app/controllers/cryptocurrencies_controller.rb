@@ -4,7 +4,7 @@ class CryptocurrenciesController < ApplicationController
 
   # GET /
   def index
-    @cryptocurrencies = Cryptocurrency.all
+    @cryptocurrencies = Cryptocurrency.order(market_cap: :desc)
   end
 
   # GET /cryptocurrencies/:id
