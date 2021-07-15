@@ -46,6 +46,10 @@ RSpec.describe Cryptocurrency, type: :model do
         subject.pair = nil
         expect(subject).to_not be_valid
       end
+
+      it 'must have default value when created' do
+        expect(subject.pair).to eq(Cryptocurrency.pairs.keys[0])
+      end
     end
 
     describe 'price' do
