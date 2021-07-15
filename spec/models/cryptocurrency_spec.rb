@@ -3,6 +3,7 @@ require_relative '../factories/cryptocurrencies.rb'
 
 RSpec.describe Cryptocurrency, type: :model do
   subject { create(:cryptocurrency) }
+  let(:pairs) { ['USD'] }
 
   describe 'validations' do
     describe 'name' do
@@ -49,6 +50,12 @@ RSpec.describe Cryptocurrency, type: :model do
 
       it 'must have default value when created' do
         expect(subject.pair).to eq(Cryptocurrency.pairs.keys[0])
+      end
+
+      it 'must have an enum value' do
+        pairs.each_with_index do |pair, index|
+          expect(described_class.pairs[pair]).to eq index
+        end
       end
     end
 
