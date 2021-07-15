@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <h1><%= @cryptocurrency.name %> (<%= @cryptocurrency.symbol.upcase %>)</h1>
+  <h2><%= number_to_currency(@cryptocurrency.price, separator: ",", delimiter: '.') %> <%= @cryptocurrency.pair %></h2>
+  <div class="row">
+    <div class="col-6">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Volumen de comercio en 24 horas</td>
+            <td><%= number_to_currency(@cryptocurrency.total_volume, delimiter: '.', precision: 0) %> <%= @cryptocurrency.pair %></td>
+          </tr>
+          <tr>
+            <td>Capitalización de mercado</td>
+            <td><%= number_to_currency(@cryptocurrency.market_cap, delimiter: '.', precision: 0) %> <%= @cryptocurrency.pair %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Moneda</th>
+        <th scope="col"></th>
+        <th scope="col">Precio</th>
+        <th scope="col">Volumen en 24h</th>
+        <th scope="col">Cap. de Mercado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% counter = 0 %>
+      <% @cryptocurrencies.each do |currency| %>
+        <tr>
+          <th scope="row"><%= counter += 1 %></th>
+          <td><%= link_to currency.name, cryptocurrency_path(currency) %></td>
+          <td><%= currency.symbol.upcase %></td>
+          <td><%= number_to_currency(currency.price, separator: ",", delimiter: '.') %> <%= currency.pair %></td>
+          <td><%= number_to_currency(currency.total_volume, delimiter: '.', precision: 0) %> <%= currency.pair %></td>
+          <td><%= number_to_currency(currency.market_cap, delimiter: '.', precision: 0) %> <%= currency.pair %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
