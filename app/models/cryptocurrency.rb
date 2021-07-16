@@ -8,6 +8,6 @@ class Cryptocurrency < ApplicationRecord
 
   # Validations
   validates :name, :symbol, :pair, :price, :market_cap, :total_volume, presence: true
-  validates :price, :market_cap, :total_volume, numericality: true
+  validates :price, :market_cap, :total_volume, :favorites_count, numericality: true
   validates :name, :symbol, uniqueness: true
 end

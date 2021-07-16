@@ -106,6 +106,19 @@ RSpec.describe Cryptocurrency, type: :model do
         expect(subject).to_not be_valid
       end
     end
+
+    describe 'favorites_count' do
+      it 'must have default value when created' do
+        expect(subject.favorites_count).to eq(0)
+      end
+
+      it 'must have only numbers' do
+        expect(subject).to be_valid
+
+        subject.favorites_count = 'AB001'
+        expect(subject).to_not be_valid
+      end
+    end
   end
 
   describe 'associations' do
