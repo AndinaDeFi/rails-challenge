@@ -1,5 +1,6 @@
-<div class="container-fluid">
-  <h1>Criptomonedas Listadas:</h1>
+<div class="my-5">
+
+  <h3>Tus Favoritos:</h3>
   <table class="table">
     <thead>
       <tr>
@@ -17,7 +18,7 @@
     </thead>
     <tbody>
       <% counter = 0 %>
-      <% @cryptocurrencies.each do |currency| %>
+      <% @favorite_cryptos.each do |currency| %>
         <tr>
           <th scope="row"><%= counter += 1 %></th>
           <% if current_user.present? %>
@@ -37,6 +38,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <%= render partial: "favorite_cryptos" %>
 </div>
