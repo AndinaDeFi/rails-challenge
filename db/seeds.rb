@@ -24,7 +24,7 @@ end
 
 puts '-' * 32
 
-5.times do
+4.times do
   email = Faker::Internet.email
   name = Faker::Name.name
   username = name.downcase.gsub(' ', '_')
@@ -32,6 +32,7 @@ puts '-' * 32
   User.create!(
     email: email,
     username: username,
-    password: 123456
+    password: '123456'
   )
 end
+User.create!(email: 'defiant@mail.com', username: 'Defiant', password: '123456')
