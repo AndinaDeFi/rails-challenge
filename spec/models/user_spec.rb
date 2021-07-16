@@ -45,4 +45,14 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'associations' do
+    describe 'favorite_cryptocurrencies' do
+      it { expect(described_class.reflect_on_association(:favorite_cryptocurrencies).macro).to eq(:has_many) }
+    end
+
+    describe 'cryptocurrencies' do
+      it { expect(described_class.reflect_on_association(:cryptocurrencies).macro).to eq(:has_many) }
+    end
+  end
 end

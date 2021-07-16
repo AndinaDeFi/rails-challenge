@@ -106,5 +106,45 @@ RSpec.describe Cryptocurrency, type: :model do
         expect(subject).to_not be_valid
       end
     end
+
+    describe 'favorites_count' do
+      it 'must have default value when created' do
+        expect(subject.favorites_count).to eq(0)
+      end
+
+      it 'must have only numbers' do
+        expect(subject).to be_valid
+
+        subject.favorites_count = 'AB001'
+        expect(subject).to_not be_valid
+      end
+    end
+  end
+
+  describe 'associations' do
+    describe 'favorite_cryptocurrencies' do
+      it { expect(described_class.reflect_on_association(:favorite_cryptocurrencies).macro).to eq(:has_many) }
+    end
+
+    describe 'users' do
+      it { expect(described_class.reflect_on_association(:users).macro).to eq(:has_many) }
+    end
+  end
+
+  describe 'instance methods' do
+    it '#increment_favorite_count! should increment by 1 favorites_count' do
+      expect(subject.favorites_count).to eq(0)
+      subject.increment_favorites_count!
+
+      expect(subject.favorites_count).to eq(1)
+    end
+
+    it '#decrement_favorites_count! should decrease by 1 favorites_count' do
+      subject.favorites_count = 1
+      expect(subject.favorites_count).to eq(1)
+      subject.decrement_favorites_count!
+
+      expect(subject.favorites_count).to eq(0)
+    end
   end
 end
