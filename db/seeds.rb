@@ -23,3 +23,15 @@ CRYPTOCURRENCIES.each do |currency|
 end
 
 puts '-' * 32
+
+5.times do
+  email = Faker::Internet.email
+  name = Faker::Name.name
+  username = name.downcase.gsub(' ', '_')
+  puts "Creating user: #{email}..."
+  User.create!(
+    email: email,
+    username: username,
+    password: 123456
+  )
+end
