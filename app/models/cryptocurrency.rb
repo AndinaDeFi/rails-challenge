@@ -10,4 +10,14 @@ class Cryptocurrency < ApplicationRecord
   validates :name, :symbol, :pair, :price, :market_cap, :total_volume, presence: true
   validates :price, :market_cap, :total_volume, :favorites_count, numericality: true
   validates :name, :symbol, uniqueness: true
+
+  # Instance Methods
+
+  def increment_favorites_count!
+    self.favorites_count += 1
+  end
+
+  def decrement_favorites_count!
+    self.favorites_count -= 1
+  end
 end
