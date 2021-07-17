@@ -47,6 +47,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 
   gem 'factory_bot_rails', '~> 6.2'
+
+  gem 'capybara', '~> 3.35', '>= 3.35.3'
+
+  gem 'webdrivers', '~> 4.6'
 end
 
 group :development do
