@@ -18,7 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :environment, :development
+set :output, { error: 'log/cron.log', standard: 'log/cron.log' }
 
-every :hour do
+every 5.minutes do
   rake 'cryptocurrencies:update_prices'
 end
