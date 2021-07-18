@@ -6,16 +6,16 @@
       <table class="table">
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
             <td>Volumen de comercio en 24 horas</td>
             <td><%= number_to_currency(@cryptocurrency.total_volume, delimiter: '.', precision: 0) %> <%= @cryptocurrency.pair %></td>
           </tr>
           <tr>
             <td>Capitalización de mercado</td>
             <td><%= number_to_currency(@cryptocurrency.market_cap, delimiter: '.', precision: 0) %> <%= @cryptocurrency.pair %></td>
+          </tr>
+          <tr>
+            <td>Cantidad de Favoritos:</td>
+            <td><%= @cryptocurrency.favorites_count %></td>
           </tr>
         </tbody>
       </table>

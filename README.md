@@ -5,9 +5,9 @@
 <img src="https://defiantapp.tech/wp-content/uploads/2020/07/logo.png" alt="Logo">
 
   <h3 align="center">Defiant Challenge</h3>
-
+  <h4>[(read challenge)](https://github.com/SantiLl/rails-challenge/blob/main/challenge.md)</h4>
   <p align="center">
-    This project consists of building an API that processes client files and creates delivery orders asynchronously.
+    This project consists of building an app that renders a list of cryptocurrencies, each user can add these cryptos as favorite.
     <br />
     <br />
     <a href="https://github.com/SantiLl/rails-challenge/issues">Report Bug</a>
@@ -19,12 +19,12 @@
 ## Built With
 
 - Ruby 2.6.3
-- Rails 6.0.3.7
+- Rails 6.1.4
 - Postgresql 13.2
 
 ## Live Demo
 
-> There is no Live Demo for this project yet.
+<img src="app/assets/images/demo.gif" alt="demo-gif">
 
 
 <!-- INSTALLATION -->
@@ -54,6 +54,15 @@ To have this app on your pc, you need to:
 
 ## App Interaction
 
+Once the app structure is done run:
+* `rails db:seed` in order to get all the data structure.
+* `rake cryptocurrencies:update_prices` can be runned whenever prices need to be updated. If you want to automate this process, thanks to [whenever gem](https://github.com/javan/whenever), by running `crontab -r && whenever --update-crontab --set environment='development'` on the project folder. Prices now should update every 5 minutes.
+
+### User Credentials:
+
+Once runned the seed, you can log in with
+`email: defiant@mail.com`
+`password: 123456`
 
 <!-- AUTOMATED TEST -->
 ### Automated Test
@@ -125,3 +134,18 @@ bug/login-ie
 ## Resources:
 Here are some of the resources that helped me to develop the app:
 
+https://github.com/heartcombo/devise#getting-started
+
+https://stackoverflow.com/questions/23094654/user-favorites-system-in-rails/23095574
+
+https://github.com/jnunemaker/httparty
+
+https://stackoverflow.com/questions/2080188/recurring-tasks-in-a-ruby-on-rails-application-cron-or-other
+
+https://stackoverflow.com/questions/39773890/how-to-remove-disable-sign-up-from-devise
+
+https://stackoverflow.com/questions/41972575/generating-devise-controllers-rails-devise/41972901
+
+https://www.codewithjason.com/rails-integration-tests-rspec-capybara/
+
+https://stackoverflow.com/questions/11514968/rails-using-whenever-gem-in-development/11519175

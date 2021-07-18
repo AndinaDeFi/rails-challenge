@@ -3,6 +3,7 @@ require_relative '../../db/seeds/cryptocurrencies.rb'
 namespace :cryptocurrencies do
   desc 'Update Cryptocurrencies Prices'
   task update_prices: :environment do
+    puts 'Updating cryptocurrencies prices...'
     CRYPTOCURRENCIES.each do |currency|
       crypto = Cryptocurrency.find_by(symbol: currency[:symbol])
 

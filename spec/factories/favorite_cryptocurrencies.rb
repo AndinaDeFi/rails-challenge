@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :favorite_cryptocurrency do
-    user { nil }
-    cryptocurrency { nil }
+    user
+    cryptocurrency { create(:cryptocurrency, favorites_count: 1) }
   end
 end
