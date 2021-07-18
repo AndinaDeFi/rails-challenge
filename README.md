@@ -5,7 +5,7 @@
 <img src="https://defiantapp.tech/wp-content/uploads/2020/07/logo.png" alt="Logo">
 
   <h3 align="center">Defiant Challenge</h3>
-
+  <h4>[(read challenge)](https://github.com/SantiLl/rails-challenge/blob/main/challenge.md)</h4>
   <p align="center">
     This project consists of building an app that renders a list of cryptocurrencies, each user can add these cryptos as favorite.
     <br />
